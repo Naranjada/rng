@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+  <title>Hello, world!</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <table class="table table-striped">
+              {% for l in lista %}
+              <tr>
+               <th>{{l.player}}</th>
+               <td>{{l.equipo1}}</td>
+               <td>{{l.equipo2}}</td>
+               <td>{{l.equipo3}}</td>
+               <td>{{l.equipo4}}</td>
+             </tr>
+             {% endfor %}
+           </table>
+           <button class="btn btn-primary" onclick="reload();">Recargar</button>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  
+  function reload() {
+    location.reload();
+  }
+</script>
+
+</body>
+</html>
