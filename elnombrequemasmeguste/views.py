@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
-from django.views.generic import TemplateView
 from schemas.models.team import Team
+from django.views.generic import TemplateView
+from schemas.models.jugador import Jugador
 import random
 
 # Create your views here.
@@ -23,4 +23,3 @@ class IndexView(TemplateView):
         print lista
         context['lista'] = lista
         return context
-

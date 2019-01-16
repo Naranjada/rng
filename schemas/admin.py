@@ -18,4 +18,5 @@ admin.site.register(Jugador, JugadorAdmin)
 class TeamAdmin(admin.ModelAdmin):
 	list_display = ("name",)
 	ordering = ("name",)
+
 admin.site.register(Team, TeamAdmin)

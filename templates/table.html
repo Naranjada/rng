@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+   <title></title>
+</head>
+<body>
+   <div class="container">
+      <div class="row">
+         <div class="col-12">
+            <div class="card">
+               <div class="card-body">
+                  <h2 class = "text-center">Tabla de Goleadores</h2>
+               </div>
+            </div>
+          <div class="card">
+             <div class="card-body">
+               <div class="table-responsive">
+                  <table class="table table-hover">
+                     <thead>
+                        <tr>
+                           <th>Goles</th>
+                           <th>Nombre</th>
+                           <th>Equipo</th>
+                           <th>Pais</th>
+                           <th>Editar</th>
+                        </tr>
+                     </thead>       
+                     <tfoot>
+                        <tr>
+                           <th>Goles</th>
+                           <th>Nombre</th>
+                           <th>Equipo</th>
+                           <th>Pais</th>
+                           <th>Editar</th>
+                        </tr>
+                     </tfoot>     
+                     <tbody>
+                        {% for jugador in jugadores %}
+                        <tr>
+                           <td>{{jugador.goals}}</td>
+                           <td>{{jugador.name}}</td>
+                           <td>{{jugador.team}}</td>
+                           <td>{{jugador.country}}</td>
+                           <td>
+                              <form action="" method="POST">
+                                 {% csrf_token %}
+                                 <input type="number" name="goals">
+                                 <button class="btn btn-primary" name="playerid" value="{{jugador.id}}">sumar</button>
+                              </form>
+                           </td>
+                        </tr>
+                        {% endfor %}
+                     </tbody>  
+                  </table>
+               </div>
+            </div>
+         </div> 
+
+      </div>
+   </div>
+</div>
+</body>
+</html>
